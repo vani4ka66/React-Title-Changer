@@ -1,8 +1,17 @@
 import "./App.css";
+import React, {useState, useEffect} from "react";
 
 function App() {
+
+  const [counter, setCounter] = useState(1);
+
+  useEffect(() => {
+    document.title = `Counter (${counter})`;
+  });
+
   return (
     <div className="App">
+      <button onClick={() => setCounter(counter + 1)}>Count ({counter})</button>
       <section class="hero">
         <div class="hero-body">
           <p class="title">A React Task</p>
